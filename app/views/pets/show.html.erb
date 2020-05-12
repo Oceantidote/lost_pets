@@ -1,0 +1,17 @@
+<h1><%= @pet.name %></h1>
+<p><%= @pet.address %></p>
+<%= link_to "Edit pet", edit_pet_path(@pet) %>
+<%= link_to pet_path(@pet), method: :delete, data: { confirm: "PLease me don't delete me, I just want a loving home" } do %>
+  <i class="fas fa-trash"></i>
+<% end %>
+
+
+<% if @pet.found_on.present? %>
+  <input type="checkbox" checked>
+  <!-- <i class="fas fa-check-square"></i> -->
+<% else %>
+  <input type="checkbox">
+  <!-- <i class="fas fa-check-square"></i> -->
+<% end %>
+
+<%= link_to "Home", pets_path  %>

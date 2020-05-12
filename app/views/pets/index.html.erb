@@ -1,0 +1,20 @@
+<div class="container pt-10vh">
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-sm-4 col-md-6">
+        <%= link_to pet_path(pet) do %>
+          <div class="pet-card" style="background-image: url(<%= asset_path('dog') %>)">
+            <p><%= pet.name %></p>
+            <p><%= pet.address %></p>
+            <p><%= pet.found_on %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to new_pet_path do %>
+    <div class="btn btn-primary">
+      New Pet
+    </div>
+  <% end %>
+</div>
